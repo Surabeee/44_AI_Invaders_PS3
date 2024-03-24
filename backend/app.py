@@ -27,7 +27,7 @@ def recommend(word):
     except:
         return []
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -112,5 +112,5 @@ def prompt(word):
     else:
         return jsonify(prompts)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run()
